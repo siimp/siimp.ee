@@ -1,0 +1,5 @@
+Generating certificates
+---------------------------------
+sudo yum install python2-certbot-nginx
+sudo certbot --nginx certonly
+cp /etc/letsencrypt/live/siimp.ee/* /home/sites/siimp.ee/cert/
