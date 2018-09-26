@@ -1,0 +1,11 @@
+[Unit]
+Description=nasdaqbaltic-backend
+After=syslog.target
+
+[Service]
+User=nasdaqbaltic-backend
+ExecStart=/home/sites/nasdaqbaltic.siimp.ee/backend/nasdaqbaltic-0.0.1.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

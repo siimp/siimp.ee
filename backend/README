@@ -1,0 +1,11 @@
+adduser nasdaqbaltic-backend
+passwd nasdaqbaltic-backend
+
+#test execution permissions
+sudo -i -u nasdaqbaltic-backend
+
+mv nasdaqbaltic-backend.service /etc/systemd/system/nasdaqbaltic-backend.service
+systemctl daemon-reload
+
+sudo systemctl start nasdaqbaltic-backend
+sudo systemctl enable nasdaqbaltic-backend
