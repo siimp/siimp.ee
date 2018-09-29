@@ -1,5 +1,6 @@
 adduser nasdaqbaltic-backend
 passwd nasdaqbaltic-backend
+chmod o+x nasdaqbaltic.jar 
 
 #test execution permissions
 sudo -i -u nasdaqbaltic-backend
