@@ -1,5 +1,10 @@
 Generating certificates
 ---------------------------------
 sudo yum install python2-certbot-nginx
+
+cd /etc/letsencrypt/live/
 sudo certbot --nginx certonly
-cp /etc/letsencrypt/live/siimp.ee/* /home/sites/siimp.ee/cert/
+
+SITE=game-of-life.siimp.ee &&
+cp "${SITE}/cert.pem" "/home/sites/${SITE}/cert/${SITE}.crt" &&
+cp "${SITE}/privkey.pem" "/home/sites/${SITE}/cert/${SITE}.key"
