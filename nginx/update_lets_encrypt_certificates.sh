@@ -4,7 +4,7 @@ echo "installing prerequisites"
 
 sudo yum -y install python2-certbot-nginx
 
-SITES=("siimp.ee" "game-of-life.siimp.ee" "nasdaqbaltic.siimp.ee")
+SITES=("siimp.ee" "game-of-life.siimp.ee" "dividend-yields.siimp.ee" "cart-price.siimp.ee")
 echo "sites are $SITES"
 
 LETS_ENCRYPT_DIR=/etc/letsencrypt/live
