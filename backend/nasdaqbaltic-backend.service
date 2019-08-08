@@ -4,8 +4,9 @@ After=syslog.target
 
 [Service]
 User=nasdaqbaltic-backend
-ExecStart=/home/sites/nasdaqbaltic.siimp.ee/backend/nasdaqbaltic.jar
+ExecStart=/bin/bash -c "java -Xmx128m -jar /home/sites/dividend-yields.siimp.ee/backend/nasdaqbaltic.jar --spring.config.location=file:/home/si$
 SuccessExitStatus=143
 
 [Install]
 WantedBy=multi-user.target
+
