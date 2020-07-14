@@ -31,6 +31,7 @@ fi
 echo ""; echo ""
 echo "--CONFIGURING SYSTEM--"
 mkdir -p /app
+cp --no-clobber centos/siimp.ee.variables.sh /etc/profile.d/
 
 
 
