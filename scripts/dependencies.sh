@@ -36,8 +36,8 @@ fi
 echo ""; echo ""
 echo "--CONFIGURING SYSTEM--"
 mkdir -p ${APP_DIRECTORY}
-cp --no-clobber scripts/app_variables.sh /etc/profile.d/
-
+cp scripts/app_variables.sh /etc/profile.d/
+cp --force conf/nginx.conf /etc/nginx/nginx.conf 
 
 
 echo ""; echo ""
