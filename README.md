@@ -4,4 +4,4 @@
 * git clone https://github.com/siimp/siimp.ee.git
 * cd siimp.ee
 * ./scripts/dependencies.sh
-* ./script/setup_app_index.sh
+* ./app/siimp.ee/setup.sh
