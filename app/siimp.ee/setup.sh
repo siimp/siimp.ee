@@ -5,5 +5,5 @@ mkdir -p $APP_DIR
 cp -r app/siimp.ee/static $APP_DIR
 cp -r app/siimp.ee/cert $APP_DIR
 cp app/siimp.ee/nginx/siimp.ee.conf /etc/nginx/conf.d/
-# cp cert
-# chown -R :www-data ${APP_DIR}
+
+systemcttl reload nginx

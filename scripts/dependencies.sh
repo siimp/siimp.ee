@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # setting up global variables manually for the first session
-./centos/app_variables.sh
+./scripts/app_variables.sh
 
 PM="dnf --assumeyes"
 INSTALL="$PM install"
@@ -19,6 +19,7 @@ $INSTALL nginx
 $INSTALL nodejs
 $INSTALL git
 $INSTALL java-11-openjdk
+$INSTALL certbot python3-certbot-nginx
 
 
 echo ""; echo ""
@@ -35,7 +36,7 @@ fi
 echo ""; echo ""
 echo "--CONFIGURING SYSTEM--"
 mkdir -p ${APP_DIRECTORY}
-cp --no-clobber centos/app_variables.sh /etc/profile.d/
+cp --no-clobber scripts/app_variables.sh /etc/profile.d/
 
 
 
