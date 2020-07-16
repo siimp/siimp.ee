@@ -5,3 +5,5 @@
 * cd siimp.ee
 * ./scripts/dependencies.sh
 * ./app/siimp.ee/setup.sh
+* ./app/boids/setup.sh
+* ./app/game-of-life/setup.sh
