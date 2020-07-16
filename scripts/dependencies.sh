@@ -38,6 +38,10 @@ echo "--CONFIGURING SYSTEM--"
 mkdir -p ${APP_DIRECTORY}
 cp scripts/app_variables.sh /etc/profile.d/
 cp --force conf/nginx.conf /etc/nginx/nginx.conf 
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+firewall-cmd --reload
+
 
 
 echo ""; echo ""
