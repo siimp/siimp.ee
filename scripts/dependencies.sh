@@ -5,6 +5,7 @@
 
 PM="dnf --assumeyes"
 INSTALL="$PM install"
+ENABLE="$PM module enable"
 
 
 echo "using package manager command \"$PM\""
@@ -20,7 +21,8 @@ $INSTALL nodejs
 $INSTALL git
 $INSTALL java-11-openjdk
 $INSTALL certbot python3-certbot-nginx
-
+$ENABLE postgresql:12
+$INSTALL postgresql-server
 
 echo ""; echo ""
 echo "--CONFIGURING SERVICES--"
@@ -31,6 +33,13 @@ then
   systemctl enable nginx
 fi
 
+if [ "$(systemctl is-active postgresql)" != "active" ];
+then
+  echo "starting and enabling postgresql"
+  postgresql-setup --initdb 
+  systemctl start postgresql 
+  systemctl enable postgresql
+fi
 
 
 echo ""; echo ""
