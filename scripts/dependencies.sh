@@ -23,6 +23,9 @@ $INSTALL java-11-openjdk
 $INSTALL certbot python3-certbot-nginx
 $ENABLE postgresql:12
 $INSTALL postgresql-server
+$PM config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+$INSTALL docker-ce docker-ce-cli containerd.io --nobest
+
 
 echo ""; echo ""
 echo "--CONFIGURING SERVICES--"
@@ -39,6 +42,13 @@ then
   postgresql-setup --initdb 
   systemctl start postgresql 
   systemctl enable postgresql
+fi
+
+if [ "$(systemctl is-active docker)" != "active" ];
+then
+  echo "starting and enabling docker"
+  systemctl start docker
+  systemctl enable docker
 fi
 
 
