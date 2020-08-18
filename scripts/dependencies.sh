@@ -51,6 +51,8 @@ then
   #systemctl enable docker
 fi
 
+systemctl enable certbot-renew.timer
+
 
 echo ""; echo ""
 echo "--CONFIGURING SYSTEM--"
