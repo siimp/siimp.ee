@@ -1,4 +1,4 @@
-?php
+<?php
 // database configuration parameters
 $conn = array(
     'dbname' => 'scrum_online',
@@ -17,14 +17,7 @@ $cardSets = [['1', '2', '3', '5', '8', '13', 'lebo ots', '42']];
 $src = "https://github.com/Toxantron/scrumonline/tree/master";
 
 // Active ticketing plugins of the page
-$plugins = [
-    // Plugin to load issues from github
-    'GitHub',
-    // Plugin to load issues from JIRA
-    'JIRA',
-    // Plugin to load issues from Gitlab
-    'Gitlab'
-];
+$plugins = [];
 
 // Configuration for the server side JIRA controller
 $jiraConfiguration = [
