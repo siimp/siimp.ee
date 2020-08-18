@@ -1,0 +1,6 @@
+scrumpoker
+----------------------------
+sudo docker run -d -p 8084:80 -e HOST="http://localhost:8084" chrisns/scrumonline:bundled
+
+docker cp /home/sites/scrumpoker.siimp.ee/config.php 53ac600548f0:/scrumonline/src/config.php
+docker cp /home/sites/scrumpoker.siimp.ee/templates/home.php 53ac600548f0:/scrumonline/src/templates/home.php 
