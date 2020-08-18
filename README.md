@@ -7,3 +7,5 @@
 * ./app/siimp.ee/setup.sh
 * ./app/boids/setup.sh
 * ./app/game-of-life/setup.sh
+* ./app/dividend-yields/setup.sh
+* ./app/basket-watch/setup.sh
