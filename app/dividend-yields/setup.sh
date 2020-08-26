@@ -8,8 +8,12 @@ mkdir --parents $APP_DIR/git
 git clone https://github.com/siimp/dividend-yields-frontend.git $APP_DIR/git/frontend
 git clone https://github.com/siimp/dividend-yields-scraper.git $APP_DIR/git/backend
 
+cp app/dividend-yields/nginx/dividend-yields.siimp.ee.conf /etc/nginx/conf.d/
 ./app/dividend-yields/update-frontend.sh 
 
-cp app/dividend-yields/nginx/dividend-yields.siimp.ee.conf /etc/nginx/conf.d/
+./app/dividend-yields/update-backend.sh 
 
-systemctl reload nginx
+cp app/dividend-yields/dividend-yields-backend.service /etc/systemd/system
+systemctl daemon-reload
+systemctl enable dividend-yields-backend
+systemctl start dividend-yields-backend
