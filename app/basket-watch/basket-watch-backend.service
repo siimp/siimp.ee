@@ -3,7 +3,7 @@ Description=basket-watch-backend
 After=syslog.target
 
 [Service]
-ExecStart=/bin/bash -c "java -Dfile.encoding=UTF-8 -Dmicronaut.config.files=/home/sites/basket-watch.siimp.ee/backend/application.yml -Xmx128m -jar /home/sites/basket-watch.siimp.ee/backend/basket-watch-backend-0.0.1-all.jar"
+ExecStart=/bin/bash -c "java -Dfile.encoding=UTF-8 -Dmicronaut.config.files=/app/basket-watch/backend/application.yml -Xmx128m -jar /app/basket-watch/backend/basket-watch-backend-0.0.1-all.jar"
 
 [Install]
 WantedBy=multi-user.target
