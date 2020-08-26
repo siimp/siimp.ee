@@ -1,0 +1,9 @@
+[Unit]
+Description=dividend-yields-backend
+After=syslog.target
+
+[Service]
+ExecStart=/bin/bash -c "java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler -Xmx128m -jar /app/dividend-yields.siimp.ee/backend/dividend-yields-backend.jar --spring.config.location=file:/app/dividend-yields.siimp.ee/backend/"
+
+[Install]
+WantedBy=multi-user.target
