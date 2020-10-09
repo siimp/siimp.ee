@@ -3,6 +3,7 @@ Description=the-coding-love-random
 After=syslog.target
 
 [Service]
+EnvironmentFile=/app/the-coding-love-random.siimp.ee/env/bin/activate
 ExecStart=python3 /app/the-coding-love-random.siimp.ee/server.py
 
 [Install]
