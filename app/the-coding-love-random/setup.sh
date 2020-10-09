@@ -9,5 +9,10 @@ git clone https://github.com/siimp/the-coding-love-random $APP_DIR/git
 mkdir --parents $APP_DIR
 cp $APP_DIR/git/* $APP_DIR
 
+cp app/the-coding-love-random/the-coding-love-random.service /etc/systemd/system
+systemctl daemon-reload
+systemctl enable the-coding-love-random
+systemctl start the-coding-love-random
+
 cp app/the-coding-love-random/nginx/the-coding-love-random.siimp.ee.conf /etc/nginx/conf.d/
 systemctl reload nginx

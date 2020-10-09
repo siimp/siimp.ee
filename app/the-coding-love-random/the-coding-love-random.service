@@ -1,0 +1,9 @@
+[Unit]
+Description=the-coding-love-random
+After=syslog.target
+
+[Service]
+ExecStart=python3 /app/the-coding-love-random.siimp.ee/server.py
+
+[Install]
+WantedBy=multi-user.target
