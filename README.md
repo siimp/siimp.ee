@@ -14,6 +14,7 @@
 * ./app/the-coding-love-random/setup.sh
 
 ## Updating apps
+* ./app/the-coding-love-random/update.sh
 
 ## Adding https to http sites
     sudo certbot --nginx certonly
