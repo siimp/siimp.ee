@@ -11,7 +11,7 @@ $conn = array(
 // This is used to create the join link
 $host = "http://scrumpoker.siimp.ee";
 
-$cardSets = [['1', '2', '3', '5', '8', '13', 'lebo ots', '42']];
+$cardSets = [['1', '2', '3', '5', '8', '13', 'lebo ots', '42'],['1', '3', '5', '8']];
 
 // Src tree for documentation linking from page
 $src = "https://github.com/Toxantron/scrumonline/tree/master";
