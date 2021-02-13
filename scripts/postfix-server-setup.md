@@ -1,6 +1,6 @@
 ## postfix mail server for ZONE virtual server with Centos 8
 https://www.linuxbabe.com/mail-server/postfix-send-only-smtp-server-centos-8
-
+```bash
 sudo hostnamectl siimp.ee
 sudo dnf update
 sudo dnf install postfix -y
@@ -48,6 +48,6 @@ sudo nano /etc/postfix/main.cf
 	smtp_tls_security_level = may
 	smtp_tls_loglevel = 1
 sudo systemctl restart postfix
-
+```
 score from https://www.mail-tester.com 10/10
 	
