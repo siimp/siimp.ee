@@ -13,9 +13,14 @@ cd $BUILD_DIR/backend
 git pull
 .gradlew assemble jar
 
+echo "stoping backend..."
+systemctl stop basket-watch-backend
+sleep 3
+
 cp build/libs/basket-watch-backend-*-all.jar $APP_DIR/backend/basket-watch-backend.jar
-
-
 chmod +x $APP_DIR/backend/basket-watch-backend.jar
-systemctl restart basket-watch-backend
 
+echo "starting backend..."
+systemctl start basket-watch-backend
+
+cd $CURRENT_DIR
