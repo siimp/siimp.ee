@@ -9,7 +9,6 @@ mkdir --parent $APP_DIR/static
 BUILD_DIR="$APP_DIR/git"
 CURRENT_DIR=$(pwd)
 
-# Frontend
 cd $BUILD_DIR/frontend
 git pull
 npm install
