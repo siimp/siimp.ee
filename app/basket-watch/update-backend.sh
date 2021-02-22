@@ -11,14 +11,15 @@ CURRENT_DIR=$(pwd)
 
 cd $BUILD_DIR/backend
 git pull
-.gradlew assemble jar
+chmod +x gradlew
+./gradlew assemble jar
 
 echo "stoping backend..."
 systemctl stop basket-watch-backend
 sleep 3
 
 cp build/libs/basket-watch-backend-*-all.jar $APP_DIR/backend/basket-watch-backend.jar
-chmod +x $APP_DIR/backend/basket-watch-backend.jar
+cp /home/configurations/basket-watch/application.yml $APP_DIR/backend/application.yml
 
 echo "starting backend..."
 systemctl start basket-watch-backend
