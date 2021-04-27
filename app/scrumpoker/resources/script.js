@@ -60,19 +60,23 @@ const mouseClickHandler = function(e) {
 }
 
 
-function toggleAndreasMode(isInAndreasMode) {	
-	cursorGun.style.visibility = isInAndreasMode ? 'inherit' : 'hidden';
-	body.style.cursor = isInAndreasMode ? 'none' : 'auto';
-	body.style['user-select'] = isInAndreasMode ? 'none' : 'auto';
-	
+function toggleAndreasMode(isInAndreasMode) {		
 	if(isInAndreasMode) {
 		playAudio('intro');
 		document.addEventListener('mousemove', mouseMoveHandler);
 		document.addEventListener('click', mouseClickHandler);
+		
+		const gunApproximateLocation = document.getElementById('andreas-mode-switch').getBoundingClientRect();
+		mousePositionX = gunApproximateLocation.left + 'px';
+		mousePositionY = gunApproximateLocation.top + 'px';
 	} else {
 		document.removeEventListener('mousemove', mouseMoveHandler);
 		document.removeEventListener('click', mouseClickHandler);
 	}
+	
+	cursorGun.style.visibility = isInAndreasMode ? 'inherit' : 'hidden';
+	body.style.cursor = isInAndreasMode ? 'none' : 'auto';
+	body.style['user-select'] = isInAndreasMode ? 'none' : 'auto';
 }
 
 function playAudio(audioName, resetTime=true) {
