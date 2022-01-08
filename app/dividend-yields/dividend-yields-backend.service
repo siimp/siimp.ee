@@ -4,6 +4,15 @@ After=syslog.target
 
 [Service]
 ExecStart=/bin/bash -c "java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler -Xmx128m -jar /app/dividend-yields.siimp.ee/backend/dividend-yields-backend.jar --spring.config.location=file:/app/dividend-yields.siimp.ee/backend/"
+Restart=always
+RestartSec=5s
+
+StartLimitIntervalSec=3600
+StartLimitBurst=5
+StartLimitAction=printf "Subject: dividend-yields-backend failed to restart\n\nService failed to restart after failure.\n" | sendmail siimpuustusmaa@gmail.com
+
+FailureAction=printf "Subject: dividend-yields-backend failed\n\nService failed.\n" | sendmail siimpuustusmaa@gmail.com
+
 
 [Install]
 WantedBy=multi-user.target

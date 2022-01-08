@@ -11,10 +11,10 @@ RestartSec=5s
 
 StartLimitIntervalSec=3600
 StartLimitBurst=5
-StartLimitAction=printf "Subject: the-coding-love-random failed to restart\n\nThe coding love service failed to restart after failure.\n" | sendmail siimpuustusmaa@gmail.com
+StartLimitAction=printf "Subject: the-coding-love-random failed to restart\n\nService failed to restart after failure.\n" | sendmail siimpuustusmaa@gmail.com
 
 
-FailureAction=printf "Subject: the-coding-love-random failed\n\nThe coding love service failed.\n" | sendmail siimpuustusmaa@gmail.com
+FailureAction=printf "Subject: the-coding-love-random failed\n\nService failed.\n" | sendmail siimpuustusmaa@gmail.com
 
 [Socket]
 ReusePort=yes

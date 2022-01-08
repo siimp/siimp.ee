@@ -4,6 +4,15 @@ After=syslog.target
 
 [Service]
 ExecStart=/bin/bash -c "java -Dfile.encoding=UTF-8 -Dmicronaut.config.files=/app/basket-watch.siimp.ee/backend/application.yml -Xmx128m -jar /app/basket-watch.siimp.ee/backend/basket-watch-backend.jar"
+Restart=always
+RestartSec=5s
+
+StartLimitIntervalSec=3600
+StartLimitBurst=5
+StartLimitAction=printf "Subject: basket-watch-backend failed to restart\n\nService failed to restart after failure.\n" | sendmail siimpuustusmaa@gmail.com
+
+FailureAction=printf "Subject: basket-watch-backend failed\n\nService failed.\n" | sendmail siimpuustusmaa@gmail.com
+
 
 [Install]
 WantedBy=multi-user.target
