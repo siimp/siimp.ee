@@ -2,9 +2,22 @@
 Description=the-coding-love-random
 After=network.target
 
+
+
 [Service]
 ExecStart=/bin/bash -c "source /app/the-coding-love-random.siimp.ee/env/bin/activate && python3 /app/the-coding-love-random.siimp.ee/server.py"
 Restart=always
+RestartSec=5s
+
+StartLimitIntervalSec=3600
+StartLimitBurst=5
+StartLimitAction=printf "Subject: the-coding-love-random failed to restart\n\nThe coding love service failed to restart after failure.\n" | sendmail siimpuustusmaa@gmail.com
+
+
+FailureAction=printf "Subject: the-coding-love-random failed\n\nThe coding love service failed.\n" | sendmail siimpuustusmaa@gmail.com
+
+[Socket]
+ReusePort=yes
 
 [Install]
 WantedBy=multi-user.target
