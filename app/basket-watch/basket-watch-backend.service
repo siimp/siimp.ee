@@ -6,9 +6,10 @@ After=syslog.target
 [Service]
 ExecStart=/bin/bash -c "java -Dfile.encoding=UTF-8 -Dmicronaut.config.files=/app/basket-watch.siimp.ee/backend/application.yml -Xmx128m -jar /app/basket-watch.siimp.ee/backend/basket-watch-backend.jar"
 Restart=always
-RestartSec=5s
+TimeoutSec=0
+RestartSec=5
 
-StartLimitIntervalSec=3600
+StartLimitInterval=60s
 StartLimitBurst=5
 StartLimitAction=printf "Subject: basket-watch-backend failed to restart\n\nService failed to restart after failure.\n" | sendmail siimpuustusmaa@gmail.com
 
