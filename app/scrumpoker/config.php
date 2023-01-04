@@ -9,7 +9,7 @@ $conn = array(
 );
 
 // This is used to create the join link
-$host = "http://scrumpoker.siimp.ee";
+$host = getenv('HOST', true) ?: "http://scrumpoker.siimp.ee";
 
 $cardSets = [['1', '2', '3', '5', '8', '13', 'lebo ots', '42'],['1', '3', '5', '8']];
 
