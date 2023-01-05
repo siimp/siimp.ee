@@ -35,7 +35,7 @@ include __DIR__ . "/../config.php";
 <div class="row">
 <div class="pull-right">
 <div id="andreas-mode">
-	<span>Andreas mode: </span>
+	<span>Super Andreas mode: </span>
 	<label class="switch">
 	  <input id="andreas-mode-switch" type="checkbox" onchange="toggleAndreasMode(this.checked)">
 	  <span class="switch-slider round"></span>
@@ -44,9 +44,16 @@ include __DIR__ . "/../config.php";
 </div>
 </div>
 </div>
-
-<audio src="resources/intro.mp3"></audio>
-<audio src="resources/shot.mp3"></audio>
-<audio src="resources/laugh.mp3"></audio>
-
 <script src="resources/script.js"></script>
+<div id="foreground">
+    <span id="shot"></span>
+</div>
+<img id="cursor-gun" src="/resources/image/cursor.png" style="visibility: hidden"/>
+<canvas id="gameCanvas" width="1" height="1" style="display: none"></canvas>
+<script src="resources/js/types.js"></script>
+<script src="resources/js/init.js"></script>
+<script src="resources/js/utils.js"></script>
+<script src="resources/js/assets.js"></script>
+<script src="resources/js/render.js"></script>
+<script src="resources/js/logic.js"></script>
+<script src="resources/js/main.js"></script>

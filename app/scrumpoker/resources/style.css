@@ -54,6 +54,7 @@ input:checked + .switch-slider:before {
 
 .switch-slider.round {
   border-radius: 34px;
+  z-index: 999;
 }
 
 .switch-slider.round:before {
@@ -66,9 +67,12 @@ vertical-align: middle;
 
 #cursor-gun {
 position: fixed;
+display: block;
 visibility: hidden;
 margin: 0;
 padding: 0;
+top: 0;
+left: 0;
 }
 
 #foreground {
@@ -91,4 +95,10 @@ position: absolute;
 
 body {
 margin: 0;
+}
+
+#gameCanvas {
+  position: absolute;
+  display: none;
+  top: 0;
 }
