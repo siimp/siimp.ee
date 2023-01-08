@@ -67,8 +67,6 @@ vertical-align: middle;
 
 #cursor-gun {
 position: fixed;
-display: block;
-visibility: hidden;
 margin: 0;
 padding: 0;
 top: 0;

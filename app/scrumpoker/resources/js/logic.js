@@ -115,11 +115,11 @@ function shotClickListener(e) {
         CONTEXT.game.state = GameState.BIRD_FLYING_SHOT_TAKEN;
 
         playAudio('/resources/audio/shot.mp3');
-        const mousePositionX = e.pageX - window.pageXOffset;
-	    const mousePositionY = e.pageY - window.pageYOffset;
+        const mousePositionX = e.pageX;
+	    const mousePositionY = e.pageY;
         
-        shotArea.style.marginLeft = mousePositionX - 40 + 'px';
-        shotArea.style.marginTop = mousePositionY - 40 + 'px';
+        shotArea.style.marginLeft = mousePositionX - window.pageXOffset - 40 + 'px';
+        shotArea.style.marginTop = mousePositionY - window.pageYOffset - 40 + 'px';
         
         foreground.style.visibility = 'inherit'
         if (shotTimeoutId) {

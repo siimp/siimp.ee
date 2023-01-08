@@ -1,6 +1,6 @@
 const gameCanvas = document.getElementById('gameCanvas');
-gameCanvas.width = window.innerWidth;
-gameCanvas.height = window.innerHeight;
+gameCanvas.width = document.body.clientWidth;
+gameCanvas.height = document.body.clientHeight;
 gameCanvas.style.display = 'none';
 
 // main context

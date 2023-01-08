@@ -48,7 +48,7 @@ include __DIR__ . "/../config.php";
 <div id="foreground">
     <span id="shot"></span>
 </div>
-<img id="cursor-gun" src="/resources/image/cursor.png" style="visibility: hidden"/>
+<img id="cursor-gun" src="/resources/image/cursor.png" style="display: none"/>
 <canvas id="gameCanvas" width="1" height="1" style="display: none"></canvas>
 <script src="resources/js/types.js"></script>
 <script src="resources/js/init.js"></script>
