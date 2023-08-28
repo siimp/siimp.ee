@@ -9,6 +9,8 @@ include "config.php";
     </p>
     <p>DON'T PANIC</p>
     <p>The answer to the ultimate question of life, the universe and everything is 42.</p>
+    <br>
+    <p id="joke"></p>
   </article>
 </div>
             

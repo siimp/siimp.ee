@@ -57,3 +57,4 @@ include __DIR__ . "/../config.php";
 <script src="resources/js/render.js"></script>
 <script src="resources/js/logic.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="resources/js/joke.js"></script>
